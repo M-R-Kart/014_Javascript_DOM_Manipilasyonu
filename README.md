@@ -1,2 +1,0 @@
-# 014_Javascript_DOM_Manipilasyonu
-014_Javascript_DOM_Manipilasyonu
