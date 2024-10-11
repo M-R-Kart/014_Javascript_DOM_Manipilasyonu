@@ -56,63 +56,65 @@ getElementById, querySelector gibi yöntemlerle bir element seçilebilir.
   console.log(p); // Seçilen <p> elementi
 </script>
 
-2. Elementlerin İçeriğini Değiştirmek
+//! 2. Elementlerin İçeriğini Değiştirmek
 Seçilen bir elementin içeriğini değiştirmek için innerHTML ya da textContent kullanılabilir.
 
-javascript
-Kodu kopyala
+//* javascript
 document.getElementById('paragraf').innerHTML = 'Paragrafın yeni içeriği';
-3. Yeni Elemanlar Oluşturmak
+
+//! 3. Yeni Elemanlar Oluşturmak
 DOM'a yeni eleman eklemek için createElement() ve appendChild() gibi yöntemler kullanılır.
 
-javascript
-Kodu kopyala
+//* javascript
 var yeniP = document.createElement('p');
 yeniP.textContent = 'Bu yeni bir paragraf.';
 document.body.appendChild(yeniP); // Yeni paragraf body'ye eklenir.
-4. Elementleri Kaldırmak
+
+//! 4. Elementleri Kaldırmak
 Bir elementi DOM'dan kaldırmak için removeChild() yöntemi kullanılır.
 
-javascript
-Kodu kopyala
+//*javascript
 var silinecekP = document.getElementById('paragraf');
 silinecekP.parentNode.removeChild(silinecekP); // Paragrafı siler.
-5. Element Özelliklerini (Attributes) Değiştirmek
+
+//! 5. Element Özelliklerini (Attributes) Değiştirmek
 Elementlerin özelliklerini (örneğin, class, id, src, vb.) değiştirmek için setAttribute() ve getAttribute() kullanılır.
 
-javascript
-Kodu kopyala
+//*javascript
 var img = document.createElement('img');
 img.setAttribute('src', 'image.jpg'); // Resim kaynağını ayarlar.
 document.body.appendChild(img);
-6. CSS Stillerini Değiştirmek
+
+//! 6. CSS Stillerini Değiştirmek
 Bir elementin stilini doğrudan değiştirmek için style özelliği kullanılabilir.
 
-javascript
-Kodu kopyala
+//*javascript
 var p = document.getElementById('paragraf');
 p.style.color = 'red';  // Paragrafın rengini kırmızı yapar.
 p.style.fontSize = '20px'; // Yazı boyutunu değiştirir.
-7. DOM Olayları (Events)
-DOM ile kullanıcı etkileşimlerini yönetmek için olaylar (events) kullanılır. Olaylar, kullanıcının bir düğmeye tıklaması, klavyeden bir tuşa basması veya sayfayı kaydırması gibi etkileşimlerle tetiklenir.
+
+//! 7. DOM Olayları (Events)
+DOM ile kullanıcı etkileşimlerini yönetmek için olaylar (events) kullanılır. Olaylar, kullanıcının 
+bir düğmeye tıklaması, klavyeden bir tuşa basması veya sayfayı kaydırması gibi etkileşimlerle tetiklenir.
 
 Olay eklemek için addEventListener() yöntemi kullanılır:
 
-javascript
-Kodu kopyala
+//*javascript
 var buton = document.getElementById('myButton');
 buton.addEventListener('click', function() {
     alert('Butona tıkladınız!');
 });
-DOM'daki İlişkiler
+
+
+//! DOM'daki İlişkiler
 DOM'daki elementler arasında ebeveyn, çocuk ve kardeş ilişkileri vardır. Bu ilişkiler şu yöntemlerle tanımlanır:
 
 parentNode: Bir elementin ebeveynini döner.
 childNodes: Bir elementin tüm çocuklarını döner.
 firstChild ve lastChild: İlk ve son çocuğu döner.
 nextSibling ve previousSibling: Kardeş elementleri döner.
-html
-Kodu kopyala
+
+//*html
 <div id="konteyner">
   <p>Birinci Paragraf</p>
   <p>İkinci Paragraf</p>
@@ -123,9 +125,12 @@ Kodu kopyala
   var ikinciCocuk = birinciCocuk.nextSibling;
   console.log(ikinciCocuk); // İkinci paragrafı döner.
 </script>
-Özet
-DOM, web sayfasının yapısını temsil eden bir modeldir ve JavaScript ile bu yapıya erişerek sayfanın içeriğini dinamik olarak değiştirebilirsin. Elementleri seçmek, içeriği ve özellikleri değiştirmek, yeni elementler eklemek ve olayları yönetmek gibi işlemlerle DOM manipülasyonu yapılır. DOM'u iyi anlamak, daha etkileşimli ve dinamik web uygulamaları geliştirmek için oldukça önemlidir.
 
+Özet
+DOM, web sayfasının yapısını temsil eden bir modeldir ve JavaScript ile bu yapıya erişerek sayfanın 
+içeriğini dinamik olarak değiştirebilirsin. Elementleri seçmek, içeriği ve özellikleri değiştirmek, 
+yeni elementler eklemek ve olayları yönetmek gibi işlemlerle DOM manipülasyonu yapılır. DOM'u iyi 
+anlamak, daha etkileşimli ve dinamik web uygulamaları geliştirmek için oldukça önemlidir.
 
 let veri;
 
