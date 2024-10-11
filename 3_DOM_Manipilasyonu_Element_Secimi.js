@@ -7,22 +7,35 @@ yöntem belirli durumlar için uygun olabilir. İşte en yaygın kullanılan yö
 
 let veri;
 
+//! Elementlerin kendisini - id - className çağırma
 veri = document.getElementById("header");
+  //* <h2 class="app-title" id="header">Todo List</h2>	// index.html 19. satır.
 veri = document.getElementById("header").id;
+  //* "header" id'li elementi aldık. // index.html 19. satır.
 veri = document.getElementById("header").className;
+  //* app-title  // index.html 19. satır.
 
-veri = document.getElementById("header"); //! Bu kısım yazıldıysa alt satırdaki artık kısaltmasıdır.
-// veri = veri.id; //! Üst satırda zaten veri değişkeni içerisine header satırını attık.
-//veri = veri.className;
+//! Kaydedilen elementin sonrasındaki kısaltmalar
+veri = document.getElementById("header"); //* Bu kısım yazıldıysa alt satırdaki artık kısaltmasıdır.
+veri = veri.id; //* Üst satırda zaten veri değişkeni içerisine header satırını attık.
+veri = veri.className; //* Farklı bir kısaltma örneği
 
-veri.style.color = "blue"; //! Başlığın rengini değiştirmiş oluruz.
-veri.style.fontSize = "50px"; //! Başlığın boyutunu değiştirdik.
-//veri.style.fontWeight = "bold"; //! Başlığın harflerini kalınlaştırdık.
-// veri.style.display = "none"; //! Başlığı görünmez yaptık.
+//! Çağırılan elementin içerisindeki yazının style özellikleri değiştirme. 
+veri.style.color = "blue"; 
+  //* "Todo List" yazılı başlık mavi olur.
+veri.style.fontSize = "50px";
+  //* "Todo List" yazılı başlığın yazı boyutu değişir.
+veri.style.fontWeight = "bold";
+  //* "Todo List" yazılı başlığın harfleri kalınlaştırılmış olur.
+veri.style.display = "none";
+  //* "Todo List" yazılı başlığın görünür olmasını kaldırdık.
 
-document.getElementById("header").innerText = "Yapılacaklarlar"; //! Başlığın yazısını değiştirdik.
+document.getElementById("header").innerText = "Yapılacaklarlar";
+  //* "Todo List" yazılı başlık "Yapılacaklar" olarak değiştirdik.
+
 document.getElementById("header").innerHTML = "<b> ToDo List </b>"; //! Başlığın harflerini kalınlaştırdır.
-
+  //* "Todo List" yazılı başlığın harflerini kalınlaştırdık.
+  
 console.log(veri);
 
 
