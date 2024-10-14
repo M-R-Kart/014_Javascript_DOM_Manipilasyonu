@@ -7,24 +7,35 @@
 
 let veri;
 
-//? class = list group item olan elementleri göster.
+//? class'ı list group item olan elementleri göster.
 veri = document.getElementsByClassName("list-group-item");
-HTMLCollection(4) [li.list-group-item.list-group-item-secondary, li.list-group-item.list-group-item-secondary, 
-li.list-group-item.list-group-item-secondary, li.list-group-item.list-group-item-warning]
-    0: li.list-group-item.list-group-item-secondary //index.html 46.
-    1: li.list-group-item.list-group-item-secondary //index.html 51.
-    2: li.list-group-item.list-group-item-secondary //index.html 56.
-    3: li.list-group-item.list-group-item-warning //index.html 61.
-    length: 4
+  //*    0: li.list-group-item.list-group-item-secondary //index.html 46.
+  //*    1: li.list-group-item.list-group-item-secondary //index.html 51.
+  //*    2: li.list-group-item.list-group-item-secondary //index.html 56.
+  //*    3: li.list-group-item.list-group-item-warning //index.html 61.
+  //*    length: 4
 
+//? class'ı list group item olan 1. ve 3. elementleri göster.
 veri = document.getElementsByClassName("list-group-item")[0];
+  //* <li class="list-group-item list-group-item-secondary">…</li> //index.html 46.
 veri = document.getElementsByClassName("list-group-item")[2];
+  //* <li class="list-group-item list-group-item-secondary">…</li> //index.html 56.
 
-veri = veri[2]; //* 1. satırda sınıfını belirttiğimiz için bu şekilde çağırılabilir.
+//? class'ı list group item olan 2. elementi basit çağır.
+veri = document.getElementsByClassName("list-group-item"); 
+veri = veri[1];
+  //* <li class="list-group-item list-group-item-secondary">…</li> //index.html 51.
 
-veri[1].style.fontSize = "30px";
-veri[1].style.color = "red";
-veri[2].textContent = "new item";
+//? class'ı list group item olan 2. elementin yazı Merhaba olsun büyüklüğü 30px ve rengini kırmızı yap.
+veri = document.getElementsByClassName("list-group-item");
+veri = veri[1];
+veri.style.fontSize = "30px";
+veri.style.color = "red";
+veri.textContent = "Merhaba";
+  //*<li class="list-group-item list-group-item-secondary" style="font-size: 30px; color: red;">new item</li>
+
+//? class'ı list group item olan tüm listeyi yazısı Merhaba ve yazı rengi turuncu yap.
+veri = document.getElementsByClassName("list-group-item");
 
 for (let i = 0; i < veri.length; i++) {
   console.log((veri[i].style.color = "orange"));
@@ -32,13 +43,32 @@ for (let i = 0; i < veri.length; i++) {
 }
 
 //! 2- document.getElementsByTagName()
+  'Bu yöntem, belirtilen etiket adına göre tüm elementleri seçer. 
+  'Tüm <div>, <p>, veya başka bir etiket türünü seçmek için kullanılır.
 
 //? Sayfadaki tüm "li" ve "a" etiketlerini getir.
 veri = document.getElementsByTagName("li");
+  //* 0: li.list-group-item.list-group-item-secondary
+  //* 1: li.list-group-item.list-group-item-secondary
+  //* 2: li.list-group-item.list-group-item-secondary
+  //* 3: li.list-group-item.list-group-item-warning
+  //* length: 4
 veri = document.getElementsByTagName("a");
+  //* 0: a#btnDeleteAll.btn.btn-outline-primary.btn-sm.delete-all.float-right
+  //* 1: a.delete-item.float-right
+  //* 2: a.delete-item.float-right
+  //* 3: a.delete-item.float-right
+  //* 4: a.delete-item.float-right
+  //* btnDeleteAll: a#btnDeleteAll.btn.btn-outline-primary.btn-sm.delete-all.float-right
+  //* length: 5
 
 //? Sayfadaki "li içindeki a " etiketlerini getir.
 veri = document.getElementById("task-list").getElementsByTagName("a");
+  //* 0: a.delete-item.float-right
+  //* 1: a.delete-item.float-right
+  //* 2: a.delete-item.float-right
+  //* 3: a.delete-item.float-right
+  //* length: 4
 
 //! 3- document.querySelectorAll()
 
@@ -76,25 +106,6 @@ var element = document.getElementById("myElement");
 <script>
   var baslik = document.getElementById("baslik");
   baslik.innerHTML = "Yeni Başlık";
-</script>
-
-
-
-//! 3. getElementsByTagName
-
-Bu yöntem, belirtilen etiket adına göre tüm elementleri seçer. 
-Tüm <div>, <p>, veya başka bir etiket türünü seçmek için kullanılır.
-
-//* JavaScript:
-var paragraphs = document.getElementsByTagName("p");
-
-//? Örnek:
-//* HTML:
-<p>Birinci paragraf</p>
-<p>İkinci paragraf</p>
-<script>
-  var paragraflar = document.getElementsByTagName("p");
-  paragraflar[1].innerHTML = "İkinci Paragraf Güncellendi";
 </script>
 
 //! 4. querySelector
